@@ -13,6 +13,7 @@ Thank you for your interest in contributing to NCERT Book Downloader! This docum
 - [Adding New Books](#adding-new-books)
 - [Pull Request Process](#pull-request-process)
 - [Coding Standards](#coding-standards)
+- [Release Procedures](#release-procedures)
 
 ## Code of Conduct
 
@@ -246,6 +247,27 @@ We use `ruff` for linting. Before committing:
 ruff check .
 ruff format .
 ```
+
+## Release Procedures
+
+If you have permission to release new versions of the package:
+
+1.  **Update Version**: Increment the version in `pyproject.toml`.
+2.  **Update Changelog**: Add the new version and its changes to `CHANGELOG.md`.
+3.  **Build**: Run `python3 -m build` to generate distribution files.
+4.  **Publish**: Upload to PyPI using `twine upload dist/*`.
+
+See [RELEASE.md](RELEASE.md) for more detailed instructions and PyPI authentication tips.
+
+## Running with pipx
+
+For development and testing of the CLI, it's recommended to use `pipx`:
+
+```bash
+pipx install . --force
+```
+
+This installs the package in a isolated environment while making the `ncert-download` command available globally in your terminal.
 
 ## Questions?
 
